@@ -10,10 +10,78 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Olá, mundo!</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Gabriel Carvalho</title>
   </head>
   <body>
-    <h1>Olá, mundo!</h1>
+    
+    <header>
+      <nav class="navegacao">
+        <ul class="menu">
+          <li><a href="#inicio" class="menu-link">Início</a></li>
+          <li><a href="#sobre" class="menu-link">Sobre</a></li>
+          <li><a href="#projetos" class="menu-link">Projetos</a></li>
+          <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="inicio" class="cabecalho">
+      <div>
+        <img src="" alt="" alt="Foto de Gabriel Carvalho" class="foto-perfil">
+        <h1>Gabriel Do Nascimento Carvalho</h1>
+        <p>Desenvolvedor Full Stack</p>
+      </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Error veniam deserunt commodi tempore cupiditate, quam dignissimos 
+          beatae facilis nisi quidem a odio suscipit, sed libero fuga, inventore perferendis et rerum?
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+
+        <div class="projetos-card">
+          <img src="" alt="Projeto 1" class="projetos-imagem">
+          <h3 class="info-projetos">Loja de carros</h3>
+          <p class="paragrafo-projetos">Loja virtual moderna</p>
+        </div>
+        <div class="projetos-card">
+          <img src="" alt="Projeto 1" class="projetos-imagem">
+          <h3 class="info-projetos">Pagina de viajens</h3>
+          <p class="paragrafo-projetos">Loja virtual moderna</p>
+        </div>
+        <div class="projetos-card">
+          <img src="" alt="Projeto 1" class="projetos-imagem">
+          <h3 class="info-projetos">Microsoft</h3>
+          <p class="paragrafo-projetos">Loja virtual moderna</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">
+        Contatos
+      </h2>
+      <form class="formulario-contato" id="formulario" action="">
+        <div class="nome-form">
+          <input class="campo-form" placeholder="Nome">
+        </div>
+        <div class="grupo-form">
+          <textarea class="text-form" placeholder="Digite sua mensagem" id=""></textarea>
+        </div>
+      </form>
+    </section>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
