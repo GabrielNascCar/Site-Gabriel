@@ -26,17 +26,16 @@ body {
 .navegacao {
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.8);
     width: 100%;
     z-index: 1000;
-    padding: 1rem;
-    backdrop-filter: blur(10px);
+    padding: 1.5rem;
 }
 
 .menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -477,7 +476,7 @@ h4 {
 @media (max-width: 768px) {
 
     .navegacao {
-        padding: 0.8rem;
+        padding: 1rem;
     }
     
     .menu-toggle {
@@ -491,7 +490,7 @@ h4 {
         width: auto;
         min-width: 200px;
         height: auto;
-        background: rgba(15, 23, 42, 0.95);
+        background: rgba(15, 23, 42, 0.8);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -534,7 +533,6 @@ h4 {
         display: none;
     }
     
-    /* Animação do hamburger para X */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
