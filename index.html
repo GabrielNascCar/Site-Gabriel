@@ -48,29 +48,39 @@
 
     <section id="projetos" class="projetos">
       <h2 class="projetos-titulo">Meus Projetos</h2>
-      <div class="projetos-caixa">
+      <div id="carousel-controles" class="projetos-caixa carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
 
-        <div class="projetos-card">
-          <img src="img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Loja de carros</h3>
-            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <div class="projetos-card carousel-item active">
+            <img src="img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+            <div class="caixa-textos-projeto">
+              <h3 class="info-projetos">Loja de carros</h3>
+              <p class="paragrafo-projetos">Loja virtual moderna</p>
+            </div>
           </div>
-        </div>
-        <div class="projetos-card">
-          <img src="img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Pagina de viajens</h3>
-            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <div class="projetos-card carousel-item">
+            <img src="img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
+            <div class="caixa-textos-projeto">
+              <h3 class="info-projetos">Pagina de viajens</h3>
+              <p class="paragrafo-projetos">Loja virtual moderna</p>
+            </div>
           </div>
-        </div>
-        <div class="projetos-card">
-          <img src="img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
-          <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">Microsoft</h3>
-            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <div class="projetos-card carousel-item">
+            <img src="img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
+            <div class="caixa-textos-projeto">
+              <h3 class="info-projetos">Microsoft</h3>
+              <p class="paragrafo-projetos">Loja virtual moderna</p>
+            </div>
           </div>
+
         </div>
+        <a href="#carousel-controles" class="carousel-control-prev" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a href="#carousel-controles" class="carousel-control-next" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
 
       </div>
     </section>
