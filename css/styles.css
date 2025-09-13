@@ -85,6 +85,15 @@ h1 {
     margin: 20px;
 }
 
+h4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container h2 {
+    margin-bottom: 30px;
+}
+
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
     color: var(--claro);
@@ -246,6 +255,12 @@ h1 {
 
     50% {
         transform: translateY(-20px);
+    }
+}
+
+@media (min-width: 768px) {
+    .container .row .barra-lateral {
+        border-right: 1px solid var(--claro);
     }
 }
 
