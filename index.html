@@ -15,6 +15,8 @@
     <title>Gabriel Carvalho</title>
   </head>
   <body>
+
+    <div class="particulas"></div>
     
     <header>
       <nav class="navegacao">
@@ -28,11 +30,9 @@
     </header>
 
     <main id="inicio" class="cabecalho">
-      <div>
-        <img src="" alt="" alt="Foto de Gabriel Carvalho" class="foto-perfil">
-        <h1>Gabriel Do Nascimento Carvalho</h1>
-        <p>Desenvolvedor Full Stack</p>
-      </div>
+      <img src="img/GabrielIMG.jpg" alt="" alt="Foto de Gabriel Carvalho" class="foto-perfil">
+      <h1>Gabriel Do Nascimento Carvalho</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack</p>
     </main>
 
     <section id="sobre" class="sobre">
@@ -51,37 +51,66 @@
       <div class="projetos-caixa">
 
         <div class="projetos-card">
-          <img src="" alt="Projeto 1" class="projetos-imagem">
-          <h3 class="info-projetos">Loja de carros</h3>
-          <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <img src="img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Loja de carros</h3>
+            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          </div>
         </div>
         <div class="projetos-card">
-          <img src="" alt="Projeto 1" class="projetos-imagem">
-          <h3 class="info-projetos">Pagina de viajens</h3>
-          <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <img src="img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Pagina de viajens</h3>
+            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          </div>
         </div>
         <div class="projetos-card">
-          <img src="" alt="Projeto 1" class="projetos-imagem">
-          <h3 class="info-projetos">Microsoft</h3>
-          <p class="paragrafo-projetos">Loja virtual moderna</p>
+          <img src="img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Microsoft</h3>
+            <p class="paragrafo-projetos">Loja virtual moderna</p>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <section id="contatos" class="contatos">
+    <section id="contato" class="contatos">
       <h2 class="contatos-titulo">
-        Contatos
+        Entre em contato
       </h2>
-      <form class="formulario-contato" id="formulario" action="">
-        <div class="nome-form">
-          <input class="campo-form" placeholder="Nome">
+      <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)" action="">
+        <div class="grupo-form">
+          <input class="campo-form" placeholder="Nome" id="nome">
         </div>
         <div class="grupo-form">
-          <textarea class="text-form" placeholder="Digite sua mensagem" id=""></textarea>
+          <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="4"></textarea>
         </div>
+        <button type="submit" class="botao-form">
+          Enviar WhatsApp
+        </button>
       </form>
     </section>
+
+    <script>
+
+      function enviarWhats(event){
+        event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '558494649849'
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        window.open(url, '_blank')
+      }
+
+    </script>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
