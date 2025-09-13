@@ -19,17 +19,17 @@
     <div class="particulas"></div>
     
     <header>
-      <nav class="navegacao">
+    <nav class="navegacao">
         <ul class="menu">
-          <li><a href="#inicio" class="menu-link">Início</a></li>
-          <li><a href="#sobre" class="menu-link">Sobre</a></li>
-          <li><a href="#projetos" class="menu-link">Projetos</a></li>
-          <li><a href="#curriculo" class="menu-link">Currículo</a></li>
-          <li><a href="#tecnologias" class="menu-link">Tecnologias</a></li>
-          <li><a href="#contato" class="menu-link">Contato</a></li>
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#curriculo" class="menu-link">Currículo</a></li>
+            <li><a href="#tecnologias" class="menu-link">Tecnologias</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
 
     <main id="inicio" class="cabecalho">
       <img src="img/GabrielIMG.jpg" alt="" alt="Foto de Gabriel Carvalho" class="foto-perfil">
@@ -302,6 +302,43 @@
       }
 
     </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.createElement('button');
+        menuToggle.classList.add('menu-toggle');
+        menuToggle.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+        
+        const nav = document.querySelector('.navegacao');
+        const menu = document.querySelector('.menu');
+        
+        nav.appendChild(menuToggle);
+        
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+    });
+</script>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

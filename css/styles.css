@@ -26,17 +26,20 @@ body {
 .navegacao {
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.95);
     width: 100%;
-    z-index: 100;
-    padding: 1.5rem;
+    z-index: 1000;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
 }
 
 .menu {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 .menu-link {
@@ -45,6 +48,8 @@ body {
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 .menu-link::after {
@@ -55,10 +60,39 @@ body {
     bottom: 0;
     left: 0;
     background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.3s ease;
 }
 
 .menu-link:hover::after {
     width: 100%;
+}
+
+.menu-link:hover {
+    color: var(--primaria);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--claro);
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 .cabecalho {
@@ -414,6 +448,15 @@ h4 {
 }
 
 @media (max-width: 992px) {
+
+    .menu {
+        gap: 1.5rem;
+    }
+    
+    .menu-link {
+        font-size: 0.95rem;
+    }
+
     h1 {
         font-size: 2.8rem;
     }
@@ -432,6 +475,77 @@ h4 {
 }
 
 @media (max-width: 768px) {
+
+    .navegacao {
+        padding: 0.8rem;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .menu {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        width: auto;
+        min-width: 200px;
+        height: auto;
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(15px);
+        border-radius: 12px;
+        border: 1px solid var(--vidro);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        padding: 1rem 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+    }
+    
+    .menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+    
+    .menu li {
+        width: 100%;
+    }
+    
+    .menu-link {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        display: block;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-link:hover {
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--primaria);
+    }
+    
+    .menu-link::after {
+        display: none;
+    }
+    
+    /* Animação do hamburger para X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
 
     #tecnologias {
         padding: 4rem 1.5rem;
@@ -570,6 +684,26 @@ h4 {
     }
 }
 
+@media (max-width: 480px) {
+    .menu-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 25px;
+        height: 20px;
+    }
+    
+    .menu {
+        top: 60px;
+        right: 15px;
+        min-width: 180px;
+    }
+    
+    .menu-link {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
 @media (max-width: 400px) {
 
     #tecnologias {
@@ -611,6 +745,17 @@ h4 {
 }
 
 @media (max-width: 360px) {
+
+    .menu {
+        right: 10px;
+        min-width: 160px;
+    }
+    
+    .menu-link {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
     }
