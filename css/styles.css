@@ -229,6 +229,103 @@ h4 {
     margin-bottom: 5px;
 }
 
+#content {
+    margin-left: 0; 
+    transition: var(--transition);
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.section {
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    scroll-margin-top: 20px;
+    min-height: auto !important; 
+}
+
+.section h2 {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#tecnologias {
+    padding: 6rem 2rem;
+    scroll-margin-top: 80px;
+}
+
+#tecnologias h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--claro);
+}
+
+.tech-category {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1.5rem 0;
+    color: var(--primaria);
+    text-align: center;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tech-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.tech-link:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+    color: inherit;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-item:hover {
+    background: rgba(79, 70, 229, 0.1);
+    border-color: var(--primaria);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+.tech-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.8rem;
+    object-fit: contain;
+}
+
+.tech-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--claro);
+    margin: 0;
+}
+
 .contatos {
     padding: 6rem 2rem;
 }
@@ -335,6 +432,39 @@ h4 {
 }
 
 @media (max-width: 768px) {
+
+    #tecnologias {
+        padding: 4rem 1.5rem;
+    }
+    
+    #tecnologias h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tech-category {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tech-item {
+        padding: 1rem 0.5rem;
+    }
+    
+    .tech-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .tech-name {
+        font-size: 0.8rem;
+    }
+
     .navegacao {
         padding: 1rem;
     }
@@ -441,6 +571,29 @@ h4 {
 }
 
 @media (max-width: 400px) {
+
+    #tecnologias {
+        padding: 3rem 1rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .tech-item {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .tech-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tech-name {
+        font-size: 0.75rem;
+    }
+
     .menu {
         flex-direction: column;
         align-items: center;
@@ -454,5 +607,11 @@ h4 {
     .foto-perfil {
         width: 140px;
         height: 220px;
+    }
+}
+
+@media (max-width: 360px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
